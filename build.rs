@@ -15,8 +15,6 @@ fn build_mymath() {
         .build_target("mymath")
         .build();
 
-    println!("cargo::warning={}", dst.display());
-
-    println!("cargo::rustc-link-search={}", dst.display());
+    println!("cargo::rustc-link-search={}/build", dst.display());
     println!("cargo::rustc-link-lib=static=mymath");
 }
